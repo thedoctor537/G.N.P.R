@@ -1,4 +1,4 @@
-document.getElementById("login-fotm").addEventListener("submit", function(event) {
+document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
     let email = document.getElementById("email").value;

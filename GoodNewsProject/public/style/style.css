@@ -1,35 +1,35 @@
 body {
-    background-color: #fff5e1;
+    background-color: #ffffff;
     margin: 0px;
 }
 
 #main_h1 {
-    color: gold;
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 
 #main_h3 {
-    color: crimson;
+    color: rgba(46, 0, 252, 0.986);
 }
 
 #second_h3 {
-    color: aqua;
+    color: rgb(51, 19, 228);
 }
 
 #main_h4 {
-    color: blue;
+    color: rgb(21, 175, 175);
 }
 
 .inxNavbar ul {
     list-style-type: none;
-    background-color:rgb(155, 94, 212);
+    background-color:rgb(148, 145, 151);
     padding: 0px;
     margin: 0px;
     overflow: hidden;
 }
 
 .inxNavbar a {
-    color: Gold;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 15px;
     display: block;
@@ -37,7 +37,7 @@ body {
 }
 
 .inxNavbar a:hover {
-    background-color: rgb(99, 0, 102);
+    background-color: rgb(70, 69, 70);
 }
 
 .inxNavbar li {
@@ -50,14 +50,14 @@ main {
 
 .footerNavbar ul {
     list-style-type: none;
-    background-color:rgb(255, 196, 0);
+    background-color:rgb(148, 145, 151);
     padding: 0px;
     margin: 0px;
     overflow: hidden;
 }
 
 .footerNavbar a {
-    color: rgb(0, 255, 85);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 15px;
     display: block;
@@ -65,5 +65,9 @@ main {
 }
 
 .footerNavbar a:hover {
-    background-color: rgb(202, 166, 7);
+    background-color: rgb(70, 69, 70);
+}
+
+.footerNavbar li {
+    float: right;
 }

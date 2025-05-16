@@ -2,9 +2,9 @@
   "name": "goodnewsproject",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/Express(server.js)/server.js",
+  "main": "backend/server.js",
   "scripts": {
-    "dev": "nodemon backend/Express(server.js)/server.js"
+    "dev": "nodemon backend/server.js"
   },
   "keywords": [],
   "author": "",

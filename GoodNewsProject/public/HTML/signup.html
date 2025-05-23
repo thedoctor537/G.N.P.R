@@ -13,7 +13,7 @@
         <nav class="inxNavbar">
             <ul>
                 <li><a href="/">בית</a></li>
-                <li><a href="about">הודות</a></li>
+                <li><a href="about">אודות</a></li>
                 <li><a href="makeContact">צור קשר</a></li>
                 <li><a href="logIn">התחבר</a></li>
                 <li><a href="signup">הרשם</a></li>
@@ -21,37 +21,60 @@
         </nav>
     </header>
 
+    <div class="wrapper">
     <main id="mainSignUp">
         <h3 id="main_h3">להרשמות:</h3>
         <form id="signup-form" action="/signup" method="post">
-            <label for="email">אימייל</label>
-            <input type="email" name="email" id="email" required>
+            <div class="form-group">
+                <label for="email">אימייל</label>
+                <input type="email" name="email" id="email" required>
+            </div>
     
-            <label for="password">סיסמה</label>
-            <input type="password" name="password" id="password" required>
+            <div class="form-group">
+                <label for="password">סיסמה</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password3">הכנס את הסיסמה שוב</label>
+                <input type="password" name="password3" id="password3" required>
+            </div>
     
             <button type="submit">הרשמות</button>
         </form>    
     </main>
 
-    <footer>
-        <hr>
-         <nav class="footerNavbar">
-             <ul>
-                 <li><a href="/">בית</a></li>
-                 <li><a href="about">הודות</a></li>
-                 <li><a href="makeContact">צור קשר</a></li>
-                 <li><a href="logIn">התחבר</a></li>
-                 <li><a href="signup">הרשם</a></li>
-             </ul>
-             
-        <p>חדשות טובות אתר</p>
-        <p>&copy; כל הזכויות שמורות</p>
-        <li><strong>טלפון: </strong>03-12345678</li>
-         <li><strong>מייל: </strong>GoodNews@hotmail.com</li>
-         <li><strong>כתובת מדויקת: </strong>יגאל אלון 94 תל אביב</li>
-         </nav>
-     </footer>
+    <footer class="footerNavbar">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>ניווט</h3>
+            <ul>
+                <li><a href="/">בית</a></li>
+                <li><a href="about">אודות</a></li>
+                <li><a href="makeContact">צור קשר</a></li>
+                <li><a href="logIn">התחבר</a></li>
+                <li><a href="signup">הרשם</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>צור קשר</h3>
+            <p><strong>טלפון:</strong> 03-12345678</p>
+            <p><strong>מייל:</strong> GoodNews@hotmail.com</p>
+            <p><strong>כתובת:</strong> יגאל אלון 94, תל אביב</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>על האתר</h3>
+            <p>אתר חדשות טובות מציג רק דברים משמחים.</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 חדשות טובות | כל הזכויות שמורות</p>
+    </div>
+</footer>
+</div>
      
      <script src="../JavaScript/script.js"></script>
 </body>

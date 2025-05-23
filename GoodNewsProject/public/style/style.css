@@ -1,10 +1,54 @@
 body {
     background-color: #ffffff;
-    margin: 0px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
 }
 
-#main_h1 {
-    color: rgb(0, 0, 0);
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.about-list {
+    list-style-type: disc;
+    text-align: right;
+    display: inline-block;
+    margin: 0 auto;
+    padding-right: 20px;
+    max-width: 500px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.index-list {
+    list-style-type: disc;
+    text-align: right;
+    display: inline-block;
+    margin: 0 auto 30px;
+    padding-right: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.makeContact-list {
+    list-style-type: disc;
+    text-align: right;
+    display: inline-block;
+    margin: 0 auto 30px;
+    padding-right: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
     text-align: center;
 }
 
@@ -20,54 +64,233 @@ body {
     color: rgb(21, 175, 175);
 }
 
-.inxNavbar ul {
-    list-style-type: none;
-    background-color:rgb(148, 145, 151);
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
-}
-
-.inxNavbar a {
+#main_h4 a {
+    background-color: #8f8787;
     color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 12px;
     text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
+    display: inline-block;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
 }
 
-.inxNavbar a:hover {
+#main_h4 a:hover {
     background-color: rgb(70, 69, 70);
 }
 
+#makeContact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+#login-form {
+    display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+#login-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#login-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#login-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #8f8787;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+  background-color: #5e5b5b;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#makeContact-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#makeContact-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#makeContact-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #8f8787;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#makeContact-form button:hover {
+  background-color: #5e5b5b;
+}
+
+#signup-form {
+    display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  direction: rtl;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+#signup-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#signup-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#signup-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #8f8787;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#signup-form button:hover {
+  background-color: #5e5b5b;
+}
+
+.inxNavbar {
+    background-color: #8f8787;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.inxNavbar ul {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 10px 30px;
+    list-style: none;
+}
+
 .inxNavbar li {
-    float: right;
+    margin-left: 20px;
 }
 
-main {
+.inxNavbar a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.inxNavbar a:hover {
+    background-color: #5e5b5b;
+}
+
+#main_h1 {
     text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin: 20px 0 10px;
 }
 
-.footerNavbar ul {
-    list-style-type: none;
-    background-color:rgb(148, 145, 151);
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
+.footerNavbar {
+    background-color: #8f8787;
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    font-size: 16px;
 }
 
 .footerNavbar a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
+    transition: color 0.3s ease;
 }
 
 .footerNavbar a:hover {
-    background-color: rgb(70, 69, 70);
+    color: #bec5c7;
 }
 
-.footerNavbar li {
-    float: right;
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: right;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #928686;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #111010;
+}
+
+
+.footerNavbar a:hover {
+    background-color: #797676;
 }

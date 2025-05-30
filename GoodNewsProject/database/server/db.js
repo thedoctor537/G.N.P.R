@@ -22,4 +22,4 @@ db2.serialize(() => {
   )`);
 });
 
-module.exports = { db, db2 };
+Module.exports = { db, db2 };

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 const { db, db2 } = require("../database/server/db");
 
-app.use(express.static(path.join(__dirname, "../public/style")))
+app.use(express.static(path.join(__dirname, "../public")))
 console.log(__dirname);
 
 app.get("/login", (req, res) => {
@@ -15,19 +15,17 @@ app.get("/login", (req, res) => {
 
 app.post("/login", (req, res) => {
     console.log(req.body);
-    const { email, password } = req.body;
+    const { email2, password2 } = req.body;
 
-    if (!email || !password){
+    if (!email2 || !password2){
         return res.status(400).json({ error: "!יש למלא את כל השדות" });
     }
 
-    res.send("נכנסת למשתמש שלך בהצלחה");
-
-    db.get(`SELECT * FROM users WHERE email = ? AND password = ?`, [email, password], (err, user) => {
+    db.get(`SELECT * FROM users WHERE email = ? AND password = ?`, [email2, password2], (err, user) => {
     if (err) return res.status(500).send("שגיאה בשרת");
-    if (!user) return res.status(401).send("אימייל או סיסמה לא נכונים");
+    if (!user) return res.redirect("/signup");
 
-    res.send(`שלום ${email}, התחברת בהצלחה!`);
+    res.redirect("/news");
   });
 });
 
@@ -36,10 +34,10 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", (req, res) => {
-  const { email, password, password2 } = req.body;
+  const { email, password, password3 } = req.body;
   console.log(req.body);
 
-  if (password !== password2) {
+  if (password != password3) {
     return res.send("סיסמה לא תקינה");
   }
 
@@ -49,7 +47,7 @@ app.post("/signup", (req, res) => {
     }
 
     if (row) {
-      return res.send("שם המשתמש כבר קיים");
+      return res.redirect("/login");
     }
 
     db.run(
@@ -59,7 +57,7 @@ app.post("/signup", (req, res) => {
         if (err) {
           return res.send("שגיאה בהכנסת המשתמש");
         }
-        return res.send("נרשמת בהצלחה!");
+        return  res.redirect("/news");
       }
     );
   });
@@ -71,6 +69,11 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/HTML', 'about.html'))
 });
+
+app.get("/news", (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/HTML', 'news.html'))
+});
+
 
 app.get("/makeContact", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/HTML', 'makeContact.html'))
@@ -91,7 +94,7 @@ app.post("/makeContact", (req, res) => {
       if (err) {
         return res.status(500).send("אירעה שגיאה בעת שמירת הבקשה");
       }
-      res.send("בקשתך נשלחה בהצלחה, נחזור אליך בהקדם האפשרי.");
+      res.redirect("/makeContact");
     }
   );
 });

@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require("express-session");
 const path = require('path');
 const app = express();
 app.use(express.json());
@@ -8,6 +9,23 @@ const { db, db2 } = require("../database/server/db");
 
 app.use(express.static(path.join(__dirname, "../public")))
 console.log(__dirname);
+
+app.use(session({
+  secret: "secretkey",
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.get("/user-status", (req, res) => {
+  res.json({ loggedIn: !!req.session?.user });
+});
+
+app.get("/logout", (req, res) => {
+  req.session.destroy(err => {
+    if (err) return res.status(500).send("שגיאה בהתנתקות");
+    res.redirect("/");
+  });
+});
 
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/HTML', 'login.html'))
@@ -25,7 +43,9 @@ app.post("/login", (req, res) => {
     if (err) return res.status(500).send("שגיאה בשרת");
     if (!user) return res.redirect("/signup");
 
-    res.redirect("/news");
+     req.session.user = { email: user.email, id: user.id };
+     
+     res.redirect("/news");
   });
 });
 
@@ -65,6 +85,14 @@ app.post("/signup", (req, res) => {
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/HTML', 'index.html'))
 });
+
+app.get("/logout", (req, res) => {
+    req.session.destroy((err) => {
+        if (err) return res.send("שגיאה בהתנתקות");
+        res.redirect("/");
+    });
+});
+
 
 app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/HTML', 'about.html'))
